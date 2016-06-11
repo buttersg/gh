@@ -1,0 +1,22 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu">
+        <ion-header-bar class="bar-stable">
+            <div class="title">Grocery Hunting</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list id="groceryHunting-list1">
+                <ion-item id="groceryHunting-list-item1" ui-sref="groceryHunting.search" menu-close="">Search</ion-item>
+                <ion-item id="groceryHunting-list-item2" ui-sref="groceryHunting.results" menu-close="">Results</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,51 @@
+<!--  clone from menu -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Items</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>Items</h3>
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="row row-content">
+        <div class="col-xs-12" ng-if="!itemsLoaded">
+            <h3>{{itemsMsg}}</h3>
+        </div>
+        <div class="col-xs-12" ng-if="itemsLoaded">
+            <button class="btn btn-primary pull-right"
+                    type="button" ui-sref="app.item({id:'add'})">
+                Add Item
+            </button>
+            <ul class="media-list">
+                <li class="media" ng-repeat="item in items">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.item({id: item._id})">
+                            <img class="media-object img-thumbnail"
+                                 ng-src={{item.image}} alt="{{item.name}}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">
+                            <a ui-sref="app.item({id: item._id})">
+                                {{item.name}}
+                            </a>
+                        </h2>
+                        <p>{{item.description}}</p>
+                        <button ng-click="removeItem(item)" class="btn btn-default"
+                                type="button">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

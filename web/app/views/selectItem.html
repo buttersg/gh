@@ -1,0 +1,35 @@
+    <div class="ngdialog-message">
+        <div>
+            <h3>Item for Company</h3>
+        </div>
+        <div>
+            <form ng-submit="doAddItem()">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control input-sm" id="price" placeholder="price" ng-model="price" required>
+                </div>
+                <button type="submit" class="btn btn-info btn-sm">Add</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click=closeThisDialog()>Cancel</button>
+            </form>
+        </div>        
+        <div>
+            <p>The <strong>bold</strong> item shows what is selected after [click/select] that row below to add.</p>
+        </div>
+        <div>                
+        <table class="table table-bordered table-hover table-condensed" >
+            <tr>
+                <th>Status</th>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat="item in notUsedItems" ng-click="selectItem(item)" ng-class="{'selectedItem':item == selectedItem}">
+                <td>new</td>
+                <td>{{item.name}}</td>
+            </tr>
+            <tr><td>-</td><td>-</td></tr>
+            <tr ng-repeat="citem in items">
+                <td>exists</td>
+                <td>{{citem.item.name}}</td>
+            </tr>
+        </table>
+        </div>
+    </div>

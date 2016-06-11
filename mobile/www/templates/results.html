@@ -1,0 +1,18 @@
+<ion-view title="Results" id="page2">
+    <ion-content padding="true" class="has-header">
+        <p id="results-markdown1" style="color:#000000;">
+            {{s.item}} in {{s.postal}} by
+            <strong>Price</strong>
+        </p>
+        <div class="card" ng-if="0==ds.length">
+            <div class="item item-text-wrap">
+                <p>No stores contained that item in the postal code.</p>
+            </div>
+        </div>
+        <ion-list id="results-list2">
+            <div class="item item-body " ng-repeat="di in ds">
+                <p><strong>{{di.price/100 | currency}}</strong> {{di.name}} at {{di.company}}-{{di.store}}</p>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
